@@ -1,0 +1,1 @@
+Did not have the figma file when completing this challenge. Had fun trying to figure out how to design the eye icon's display. Was good practice for the position property. 

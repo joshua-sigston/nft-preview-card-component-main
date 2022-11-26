@@ -1,0 +1,210 @@
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+box-sizing: border-box;
+}
+/*
+2. Remove default margin
+*/
+* {
+margin: 0;
+}
+/*
+3. Allow percentage-based heights in the application
+*/
+html, body {
+height: 100%;
+font-size: 18px;
+font-family: var(--ff-base);
+}
+/*
+Typographic tweaks!
+4. Add accessible line-height
+5. Improve text rendering
+*/
+body {
+line-height: 1.7;
+-webkit-font-smoothing: antialiased;
+}
+/*
+6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+}
+/*
+7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+font: inherit;
+}
+/*
+8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+overflow-wrap: break-word;
+}
+/*
+9. Create a root stacking context
+*/
+#root, #__next {
+isolation: isolate;
+}
+
+/* Root Styles */
+:root {
+--clr-primary-200: hsl(215, 51%, 70%);
+--clr-primary-300: hsl(215, 32%, 27%);
+--clr-primary-400: hsl(216, 50%, 16%);
+--clr-primary-500: hsl(217, 54%, 11%);
+
+--clr-accent: hsl(178, 100%, 50%);
+--clr-accent-light: rgba(0, 255, 247, .3);
+
+--clr-neutral-100: hsl(0, 0%, 100%);
+
+--ff-base: 'Outfit', sans-serif;;
+
+--fw-regular: 500;
+--fw-semi-bold: 600;
+--fw-reg: 400;
+--fq-light: 300;
+}
+
+/* general styles */
+
+.grid {
+display: grid;
+}
+
+.flex {
+display: flex;
+flex-wrap: wrap;
+}
+
+.flex_column {
+display: flex;
+flex-direction: column;
+}
+
+.center_by_flex {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.center_by_grid {
+    display: grid;
+    place-content: center;
+}
+
+body {
+background-color: var(--clr-primary-500);
+margin: 1.2em 1em;
+}
+
+.main_container {
+background-color: var(--clr-primary-400);
+border-radius: 1rem;
+overflow: hidden;
+padding: 1.7em;
+max-width: 23rem;
+
+gap: 1.5em;
+}
+
+img {
+border-radius: 1rem;
+}
+
+.item_name {
+color: var(--clr-neutral-100);
+transition: 200ms ease-in-out;
+}
+
+.content_container {
+    gap: .5em;
+}
+
+.content_container > p, .time_frame, .avatar_container p {
+color: var(--clr-primary-300);
+}
+
+.content_container > p {
+    font-size: 1.2rem;
+}
+.info_container {
+justify-content: space-between;
+border-bottom: solid 1px var(--clr-primary-300);
+padding-bottom: .5em;
+}
+
+.data {
+    color: var(--clr-accent);
+}
+
+.time_container, .data_container {
+    width: 6rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.time_container img {
+    width: 19px;
+    height: 19px;
+}
+
+.avatar_container {
+    align-items: center;
+    margin-top: 1em;
+}
+.avatar_container span {
+    color: var(--clr-neutral-100);
+    margin-left: .25em;
+    transition: 200ms ease-in-out;
+}
+
+.avatar {
+    margin-right: 1.5em;
+    width: 2.5rem;
+    border: 1px solid var(--clr-neutral-100);
+    border-radius: 50%;
+}
+
+.item_name:hover, .avatar_container span:hover{
+    cursor: pointer;
+    color: var(--clr-accent);
+}
+
+/* hover state for image to show icon*/
+picture {
+    position: relative;
+}
+
+picture img:hover {
+    cursor: pointer;
+}
+
+.eye_icon_container {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    background-color: var(--clr-accent-light);
+}
+
+picture img:hover + .eye_icon_container {
+    opacity: 1;
+}
+
+.eye_icon_container:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+
